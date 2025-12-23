@@ -64,7 +64,6 @@
         }
 
         /* GALERÍA */
-        @media (max-width: 600px) {
             .galeria {
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -81,7 +80,7 @@
                 border-radius: 20px;
                 box-shadow: 0 15px 30px rgba(0,0,0,0.4);
             }
-        }
+        
         .galeria.visible {
             opacity: 1;
             transform: translateY(0);
@@ -124,7 +123,18 @@
             width: 100%;
             display: block;
         }
-
+        
+        @media (max-width: 600px) {
+            .galeria {
+                grid-template-columns: 2fr;
+                padding: 0 10px;
+            }
+        
+            .galeria img {
+                max-width: 100%;
+            }
+        }
+        
         @keyframes caer {
             to {
                 transform: translateY(110vh);
@@ -164,12 +174,6 @@
         </div>
     </section>
 </section>
-<section>
-    <div class="final">
-        Gracias por existir ❤️  
-        Que este nuevo año te regale todo lo que mereces
-    </div>
-</section>
 
 <script>
     function mostrarGaleria() {
@@ -191,4 +195,5 @@
 
 </body>
 </html>
+
 
