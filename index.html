@@ -29,6 +29,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            width: 100%;
+            max-width: 100vw;
         }
 
         h1 {
@@ -62,23 +64,24 @@
         }
 
         /* GALERÍA */
-        .galeria {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin-top: 40px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 1s ease;
+        @media (max-width: 600px) {
+            .galeria {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+                max-width: 900px;
+                margin-top: 40px;
+                opacity: 0;
+                transform: translateY(30px);
+                transition: all 1s ease;
+            }
+    
+            .galeria img {
+                width: 100%;
+                border-radius: 20px;
+                box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            }
         }
-
-        .galeria img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-        }
-
         .galeria.visible {
             opacity: 1;
             transform: translateY(0);
@@ -154,7 +157,12 @@
         </video>
         </div>
     </div>
-
+    <section>
+        <div class="final">
+            Gracias por existir ❤️  
+            Que este nuevo año te regale todo lo que mereces
+        </div>
+    </section>
 </section>
 <section>
     <div class="final">
@@ -183,3 +191,4 @@
 
 </body>
 </html>
+
