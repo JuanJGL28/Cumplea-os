@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Feliz Cumpleaños ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(160deg, #1e1e2f, #3a1c71, #ff6a88);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin-bottom: 20px;
+            animation: fadeDown 1.5s ease;
+        }
+
+        p {
+            font-size: clamp(1rem, 3.5vw, 1.25rem);
+            max-width: 720px;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+
+        .btn {
+            margin-top: 35px;
+            padding: 15px 40px;
+            border-radius: 40px;
+            border: none;
+            background: #fff;
+            color: #3a1c71;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.08);
+        }
+
+        /* GALERÍA */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin-top: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        .galeria img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .galeria.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* TEXTO FINAL */
+        .final {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            animation: fadeUp 1.5s ease;
+        }
+
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* FONDO CORAZONES */
+        .heart {
+            position: fixed;
+            top: -10px;
+            color: rgba(255,255,255,0.6);
+            animation: caer linear infinite;
+            font-size: 18px;
+        }
+        .video-box {
+            max-width: 320px;
+            margin: 20px auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .video-box video {
+            width: 100%;
+            display: block;
+        }
+
+        @keyframes caer {
+            to {
+                transform: translateY(110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section>
+    <h1>Feliz Cumpleaños, mi amor 🎂</h1>
+    <p>
+        Hoy celebramos algo más que un cumpleaños.  
+        Celebramos tu sonrisa, tu forma de ser  
+        y todos los momentos que hacen que cada día valga la pena 💖
+    </p>
+
+    <button class="btn" onclick="mostrarGaleria()">
+        Descubre nuestros recuerdos ✨
+    </button>
+
+    <div class="galeria" id="galeria">
+        <img src="fotos/1.jpeg">
+        <img src="fotos/2.jpeg">
+        <img src="fotos/4.jpeg">
+        <div class="video-box">
+        <video controls playsinline>
+            <source src="videos/6.mp4" type="video/mp4">
+        </video>
+        </div>
+    </div>
+
+</section>
+<section>
+    <div class="final">
+        Gracias por existir ❤️  
+        Que este nuevo año te regale todo lo que mereces
+    </div>
+</section>
+
+<script>
+    function mostrarGaleria() {
+        document.getElementById("galeria").classList.add("visible");
+    }
+
+    // corazones flotando
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 6000);
+    }, 500);
+</script>
+
+</body>
+</html>
