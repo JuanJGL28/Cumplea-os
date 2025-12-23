@@ -127,6 +127,55 @@
             width: 100%;
             display: block;
         }
+
+        .carta-container {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .btn-carta {
+            padding: 14px 35px;
+            border-radius: 30px;
+            border: none;
+            background: #fff;
+            color: #3a1c71;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .carta {
+            max-width: 700px;
+            margin: 30px auto 0;
+            background: #fff;
+            color: #333;
+            padding: 30px 25px;
+            border-radius: 15px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            line-height: 1.7;
+
+            /* animación */
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 1s ease;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+
+        .carta.abierta {
+            max-height: 1000px;
+            opacity: 1;
+        }
+
+        .carta p {
+            text-align: justify;
+        }
+
+        .carta p strong:first-child {
+            display: block;
+            text-align: center;
+            margin-bottom: 15px;
+        }
         
         @media (max-width: 600px) {
             .galeria {
@@ -136,6 +185,10 @@
         
             .galeria img {
                 max-width: 100%;
+            }
+            .carta {
+                margin: 20px 15px 0;
+                font-size: 1rem;
             }
         }
         
@@ -171,6 +224,39 @@
         </video>
         </div>
     </div>
+
+    <div class="carta-container">
+    <button class="btn-carta" onclick="abrirCarta()">
+        Leer mi carta 💌
+    </button>
+    <div class="carta" id="carta">
+        <p>
+            <strong>❤️PARA VOS MI AMOR❤️</strong> 
+
+            Hoy el mundo es más bonito porque celebra el día en que nació la mujer que cambió mi vida.
+            Desde que llegaste a mi vida, todo tiene más sentido.  
+            Mis días, mis sueños y hasta mis silencios llevan tu nombre.<br><br>
+
+            Amarte es lo más hermoso que me ha pasado.  
+            Tu sonrisa es mi paz, tu voz mi refugio y tu amor mi mayor fortuna.
+            Gracias por existir, por haber llegado a mi vida,  
+            por elegirme aun sabiendo que no soy lo que esperabas (quizás),  
+            y por hacer de lo simple algo mágico solo con estar a mi lado,  
+            a pesar de que tengamos nuestros altos y bajos.<br><br>
+
+            En este, tu cumpleaños, deseo cuidarte en cada caída  
+            y amarte con más fuerza en cada amanecer.
+            Prometo seguir caminando contigo, tomarte la mano  
+            y recordarte todos los días lo increíble que eres.<br><br>
+
+            <strong>Feliz cumpleaños, mi cachetoncita hermosa.  
+            Eres mi vida, mi lugar seguro y mi para siempre.
+            Te amo infinitamente ❤️</strong>
+        </p>
+    </div>
+    
+    </div>
+    
     <section>
         <div class="final">
             Gracias por existir ❤️  
@@ -179,10 +265,17 @@
     </section>
 </section>
 
+
+<script>
+function abrirCarta() {
+    document.getElementById("carta").classList.toggle("abierta");
+}
+</script>
+    
 <script>
     function mostrarGaleria() {
         document.getElementById("galeria").classList.add("visible");
-    }
+    } 
 
     // corazones flotando
     setInterval(() => {
@@ -199,6 +292,7 @@
 
 </body>
 </html>
+
 
 
 
