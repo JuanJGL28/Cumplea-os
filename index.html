@@ -118,7 +118,11 @@
             overflow: hidden;
             box-shadow: 0 15px 30px rgba(0,0,0,0.4);
         }
-
+        
+        video {
+            pointer-events: none;
+        }
+        
         .video-box video {
             width: 100%;
             display: block;
@@ -162,7 +166,7 @@
         <img src="fotos/2.jpeg">
         <img src="fotos/4.jpeg">
         <div class="video-box">
-        <video autoplay muted loop playsinline controls="false">
+        <video autoplay muted loop playsinline>
             <source src="videos/6.mp4" type="video/mp4">
         </video>
         </div>
@@ -195,6 +199,7 @@
 
 </body>
 </html>
+
 
 
 
